@@ -506,7 +506,7 @@ def create_note(lyric = 'あ', length = 480, note_num = 60, **kwargs):
 class UtauPlugin:
     def __init__(self, fpath):
         #Should I use codecs for this??? I just don't like dealing with \r\n at all.
-        data_string = open(fpath, encoding = 'shiftjis').readlines()
+        data_string = open(fpath, encoding = 'shiftjis', errors = "replace").readlines()
         phase = 0
         self.settings = {}
         self.prev_note = None
